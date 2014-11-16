@@ -1,4 +1,3 @@
-
 FROM simonbiggs/geant4
 
 MAINTAINER Simon Biggs <mail@simonbiggs.net>
@@ -18,7 +17,10 @@ WORKDIR /root/notebooks/
 
 EXPOSE 8888
 
-RUN echo ' . geant4.sh' > start_geant4_notebook.sh; \
+RUN echo '#/bin/bash' > start_geant4_notebook.sh; \
+    echo 'cd /usr/local/bin/' >> start_geant4_notebook.sh; \
+    echo '. geant4.sh' >> start_geant4_notebook.sh; \
+    echo 'cd /root/notebooks/' >> start_geant4_notebook.sh; \
     echo 'ipython3 notebook --no-browser --ip=0.0.0.0 --port=8888' >> start_geant4_notebook.sh; \
     chmod +x start_geant4_notebook.sh
 

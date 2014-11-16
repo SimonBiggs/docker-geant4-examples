@@ -12,6 +12,7 @@ RUN mkdir ~/github/; \
 RUN cp -r ~/github/ipython-geant4-linac ~/notebooks/linac-example ; \
     cp -r ~/github/scientific-python-lectures ~/notebooks/lectures-learning-python
     
+RUN ipython3 -c '%install_ext http://raw.github.com/jrjohansson/version_information/master/version_information.py'
 
 WORKDIR /root/notebooks/
 

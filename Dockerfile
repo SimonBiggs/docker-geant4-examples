@@ -18,4 +18,7 @@ WORKDIR /root/notebooks/
 
 EXPOSE 8888
 
-CMD ipython3 notebook --no-browser --ip=0.0.0.0 --port=8888
+RUN echo ' . geant4.sh' > start_geant4_notebook.sh; \
+    echo 'ipython3 notebook --no-browser --ip=0.0.0.0 --port=8888' >> start_geant4_notebook.sh
+
+CMD ./start_geant4_notebook.sh

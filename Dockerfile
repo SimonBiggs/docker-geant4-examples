@@ -5,14 +5,13 @@ MAINTAINER Simon Biggs <mail@simonbiggs.net>
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN mkdir /root/github/; \
-    cd /root/github/
-    
-RUN git clone https://github.com/jrjohansson/scientific-python-lectures.git ; \
+RUN mkdir ~/github/; \
+    cd ~/github/; \
+    git clone https://github.com/jrjohansson/scientific-python-lectures.git ; \
     git clone https://github.com/SimonBiggs/ipython-geant4-linac.git
     
-RUN cp -r /root/github/ipython-geant4-linac /root/notebooks/linac-example ; \
-    cp -r /root/github/scientific-python-lectures /root/notebooks/lectures-learning-python
+RUN cp -r ~/github/ipython-geant4-linac ~/notebooks/linac-example ; \
+    cp -r ~/github/scientific-python-lectures ~/notebooks/lectures-learning-python
     
 
 WORKDIR /root/notebooks/

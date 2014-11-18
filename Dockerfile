@@ -26,7 +26,7 @@ RUN echo '#/bin/bash' > start_geant4_notebook.sh; \
     echo 'cd /usr/local/bin/' >> start_geant4_notebook.sh; \
     echo '. geant4.sh' >> start_geant4_notebook.sh; \
     echo 'cd /root/notebooks/' >> start_geant4_notebook.sh; \
-    echo 'ipython notebook --no-browser --ip=0.0.0.0 --port=8888 &' >> start_geant4_notebook.sh; \
+    echo 'ipython notebook --no-browser --ip=0.0.0.0 --port=8888' >> start_geant4_notebook.sh; \
     chmod +x start_geant4_notebook.sh
 
 CMD ./start_geant4_notebook.sh

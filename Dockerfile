@@ -12,6 +12,12 @@ RUN cp -r ~/github/ipython-geant4-linac ~/notebooks/linac-example
 
 WORKDIR /root/notebooks/
 
+
+# Reduce image size
+RUN rm -r ~/github/*; \
+    apt-get autoremove; apt-get clean
+
+
 EXPOSE 8888
 
 RUN echo '#/bin/bash' > start_geant4_notebook.sh; \
